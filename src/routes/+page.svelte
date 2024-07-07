@@ -3,22 +3,24 @@
 	import Project from '$lib/Project.svelte';
 
 	import PhArrowSquareOutLight from 'virtual:icons/ph/arrow-square-out-light';
-	import IGithubDark from 'virtual:icons/skill-icons/github-dark';
-	import IDocker from 'virtual:icons/skill-icons/docker';
-	import INodejsDark from 'virtual:icons/skill-icons/nodejs-dark';
-	import IExpressjsDark from 'virtual:icons/skill-icons/expressjs-dark';
-	import IJavascript from 'virtual:icons/skill-icons/javascript';
-	import ITypescript from 'virtual:icons/skill-icons/typescript';
-	import IPostgresqlDark from 'virtual:icons/skill-icons/postgresql-dark';
-	import IPrisma from 'virtual:icons/skill-icons/prisma';
-	import ISequelizeDark from 'virtual:icons/skill-icons/sequelize-dark';
-	import IHtml from 'virtual:icons/skill-icons/html';
-	import ICss from 'virtual:icons/skill-icons/css';
-	import ITailwindcssDark from 'virtual:icons/skill-icons/tailwindcss-dark';
-	import ISvelte from 'virtual:icons/skill-icons/svelte';
-	import IRust from 'virtual:icons/skill-icons/rust';
-	import IPythonDark from 'virtual:icons/skill-icons/python-dark';
-	import IVscodeDark from 'virtual:icons/skill-icons/vscode-dark';
+	import IGithubDark from 'virtual:icons/skills/github-dark';
+	import IDocker from 'virtual:icons/skills/docker';
+	import INodejsDark from 'virtual:icons/skills/nodejs-dark';
+	import IExpressjsDark from 'virtual:icons/skills/expressjs-dark';
+	import IJavascript from 'virtual:icons/skills/javascript';
+	import ITypescript from 'virtual:icons/skills/typescript';
+	import IPostgresqlDark from 'virtual:icons/skills/postgresql-dark';
+	import IPrisma from 'virtual:icons/skills/prisma';
+	import ISequelizeDark from 'virtual:icons/skills/sequelize-dark';
+	import IHtml from 'virtual:icons/skills/html';
+	import ICss from 'virtual:icons/skills/css';
+	import ITailwindcssDark from 'virtual:icons/skills/tailwindcss-dark';
+	import ISvelte from 'virtual:icons/skills/svelte';
+	import IRust from 'virtual:icons/skills/rust-dark';
+	import IPythonDark from 'virtual:icons/skills/python-dark';
+	import IVscodeDark from 'virtual:icons/skills/vscode-dark';
+    import ISurrealdb from 'virtual:icons/skills/surrealdb-dark';
+    import ITauri from 'virtual:icons/skills/tauri-dark';
 	import Experience from '$lib/Experience.svelte';
 </script>
 
@@ -88,6 +90,12 @@
 				<Skill title="VSCode" website="https://code.visualstudio.com/">
 					<IVscodeDark class="size-8" />
 				</Skill>
+                <Skill title="SurrealDB" website="https://surrealdb.com/">
+                    <ISurrealdb class="size-8" />
+                </Skill>
+                <Skill title="Tauri" website="https://tauri.app/">
+                    <ITauri class="size-8" />
+                </Skill>
 			</div>
 		</section>
 		<section>
@@ -95,6 +103,11 @@
 			<Project
 				title="Portfolio"
 				website="https://github.com/YetAgainAnotherZeus/yetagainanotherzeus.github.io"
+				date="2024"
+			/>
+            <Project
+				title="Cardinal (A typescript discord bot)"
+				website="https://github.com/YetAgainAnotherZeus/cardinal"
 				date="2024"
 			/>
 		</section>
