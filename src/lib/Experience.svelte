@@ -1,14 +1,46 @@
 <script lang="ts">
+	import { selectedSkillsStore } from './SelectedSkills';
+
 	export let title: string;
 	export let website: string;
-	export let date: string;
+	export let startDate: Date;
+	export let endDate: Date | null = null;
 	export let location: string;
+
+	export let skills: string[] = [];
+
+	const months = [
+		'January',
+		'February',
+		'March',
+		'April',
+		'May',
+		'June',
+		'July',
+		'August',
+		'September',
+		'October',
+		'November',
+		'December'
+	];
 </script>
 
-<a href={website} class="block items-center mb-1 hover:text-neutral-300 group">
-	<div class="flex">
-		<h3>{title}</h3>
-		<span class="text-neutral-600 group-hover:text-neutral-500 px-2">-&nbsp; {date}</span>
+<a
+	on:mouseenter={() => selectedSkillsStore.set(skills)}
+	on:mouseleave={() => selectedSkillsStore.set([])}
+	href={website}
+	class="block w-fit items-center mb-1 hover:bg-neutral-800 py-1 px-2 rounded group"
+	target="_blank"
+	rel="noopener noreferrer"
+>
+	<div class="flex flex-wrap">
+		<h3 class="group-hover:text-neutral-300">{title}</h3>
+		<span class="text-neutral-500 group-hover:text-neutral-400 px-2"
+			>-&nbsp; {months[startDate.getMonth()]}
+			{startDate.getFullYear()} - {endDate
+				? months[endDate.getMonth()] + ' ' + endDate.getFullYear()
+				: 'Present'}</span
+		>
 	</div>
-	<p class="text-sm text-neutral-600 group-hover:text-neutral-500">{location}</p>
+	<p class="text-sm text-neutral-500 group-hover:text-neutral-400">{location}</p>
 </a>

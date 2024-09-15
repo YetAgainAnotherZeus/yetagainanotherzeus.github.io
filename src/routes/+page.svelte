@@ -1,6 +1,9 @@
-<script>
+<script lang="ts">
 	import Skill from '$lib/Skill.svelte';
 	import Project from '$lib/Project.svelte';
+	import Experience from '$lib/Experience.svelte';
+	
+	import { selectedSkillsStore } from '$lib/SelectedSkills';
 
 	import PhArrowSquareOutLight from 'virtual:icons/ph/arrow-square-out-light';
 	import IGithubDark from 'virtual:icons/skills/github-dark';
@@ -18,10 +21,11 @@
 	import ISvelte from 'virtual:icons/skills/svelte';
 	import IRust from 'virtual:icons/skills/rust-dark';
 	import IPythonDark from 'virtual:icons/skills/python-dark';
-	import IVscodeDark from 'virtual:icons/skills/vscode-dark';
     import ISurrealdb from 'virtual:icons/skills/surrealdb-dark';
     import ITauri from 'virtual:icons/skills/tauri-dark';
-	import Experience from '$lib/Experience.svelte';
+	import INest from 'virtual:icons/skills/nestjs';
+	import IGraphQL from 'virtual:icons/skills/graphql';
+	import IDiscordJS from 'virtual:icons/skills/discordjs';
 </script>
 
 <main
@@ -42,60 +46,68 @@
 		<section>
 			<h2 class="title mb-1">Skills</h2>
 			<div class="flex gap-2 flex-wrap">
-				<Skill title="Github" website="https://github.com/">
-					<IGithubDark class="size-8" />
-				</Skill>
-				<Skill title="Docker" website="https://www.docker.com/">
-					<IDocker class="size-8" />
-				</Skill>
-				<Skill title="NodeJS" website="https://nodejs.org/en">
-					<INodejsDark class="size-8" />
-				</Skill>
-				<Skill title="ExpressJS" website="https://expressjs.com/">
-					<IExpressjsDark class="size-8" />
-				</Skill>
-				<Skill title="JavaScript" website="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
-					<IJavascript class="size-8" />
-				</Skill>
-				<Skill title="TypeScript" website="https://www.typescriptlang.org/">
-					<ITypescript class="size-8" />
-				</Skill>
-				<Skill title="PostgreSQL" website="https://www.postgresql.org/">
-					<IPostgresqlDark class="size-8" />
-				</Skill>
-				<Skill title="Prisma" website="https://www.prisma.io/">
-					<IPrisma class="size-8" />
-				</Skill>
-				<Skill title="Sequelize" website="https://sequelize.org/">
-					<ISequelizeDark class="size-8" />
-				</Skill>
-				<Skill title="HTML" website="https://developer.mozilla.org/en-US/docs/Web/HTML">
-					<IHtml class="size-8" />
-				</Skill>
-				<Skill title="CSS" website="https://developer.mozilla.org/en-US/docs/Web/CSS">
-					<ICss class="size-8" />
-				</Skill>
-				<Skill title="TailwindCSS" website="https://tailwindcss.com/">
-					<ITailwindcssDark class="size-8" />
-				</Skill>
-				<Skill title="Svelte" website="https://kit.svelte.dev/">
-					<ISvelte class="size-8" />
-				</Skill>
-				<Skill title="Rust" website="https://www.rust-lang.org/">
-					<IRust class="size-8" />
-				</Skill>
-				<Skill title="Python" website="https://www.python.org/">
-					<IPythonDark class="size-8" />
-				</Skill>
-				<Skill title="VSCode" website="https://code.visualstudio.com/">
-					<IVscodeDark class="size-8" />
-				</Skill>
-                <Skill title="SurrealDB" website="https://surrealdb.com/">
-                    <ISurrealdb class="size-8" />
-                </Skill>
-                <Skill title="Tauri" website="https://tauri.app/">
-                    <ITauri class="size-8" />
-                </Skill>
+				{#key $selectedSkillsStore}
+					<Skill title="Github" website="https://github.com/">
+						<IGithubDark class="size-8" />
+					</Skill>
+					<Skill title="Docker" website="https://www.docker.com/">
+						<IDocker class="size-8" />
+					</Skill>
+					<Skill title="NodeJS" website="https://nodejs.org/en">
+						<INodejsDark class="size-8" />
+					</Skill>
+					<Skill title="ExpressJS" website="https://expressjs.com/">
+						<IExpressjsDark class="size-8" />
+					</Skill>
+					<Skill title="JavaScript" website="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+						<IJavascript class="size-8" />
+					</Skill>
+					<Skill title="TypeScript" website="https://www.typescriptlang.org/">
+						<ITypescript class="size-8" />
+					</Skill>
+					<Skill title="PostgreSQL" website="https://www.postgresql.org/">
+						<IPostgresqlDark class="size-8" />
+					</Skill>
+					<Skill title="Prisma" website="https://www.prisma.io/">
+						<IPrisma class="size-8" />
+					</Skill>
+					<Skill title="Sequelize" website="https://sequelize.org/">
+						<ISequelizeDark class="size-8" />
+					</Skill>
+					<Skill title="HTML" website="https://developer.mozilla.org/en-US/docs/Web/HTML">
+						<IHtml class="size-8" />
+					</Skill>
+					<Skill title="CSS" website="https://developer.mozilla.org/en-US/docs/Web/CSS">
+						<ICss class="size-8" />
+					</Skill>
+					<Skill title="TailwindCSS" website="https://tailwindcss.com/">
+						<ITailwindcssDark class="size-8" />
+					</Skill>
+					<Skill title="Svelte" website="https://kit.svelte.dev/">
+						<ISvelte class="size-8" />
+					</Skill>
+					<Skill title="Rust" website="https://www.rust-lang.org/">
+						<IRust class="size-8" />
+					</Skill>
+					<Skill title="Python" website="https://www.python.org/">
+						<IPythonDark class="size-8" />
+					</Skill>
+					<Skill title="SurrealDB" website="https://surrealdb.com/">
+						<ISurrealdb class="size-8" />
+					</Skill>
+					<Skill title="Tauri" website="https://tauri.app/">
+						<ITauri class="size-8" />
+					</Skill>
+					<Skill title="NestJS" website="https://nestjs.com">
+						<INest class="size-8" />
+					</Skill>
+					<Skill title="GraphQL" website="https://graphql.org">
+						<IGraphQL class="size-8" />
+					</Skill>
+					<Skill title="DiscordJS" website="https://discordjs.guide">
+						<IDiscordJS class="size-8" />
+					</Skill>
+				{/key}
 			</div>
 		</section>
 		<section>
@@ -104,19 +116,29 @@
 				title="Portfolio"
 				website="https://github.com/YetAgainAnotherZeus/yetagainanotherzeus.github.io"
 				date="2024"
+				skills={["Svelte", "TailwindCSS", "TypeScript", "NodeJS", "Github"]}
 			/>
             <Project
 				title="Cardinal (A typescript discord bot)"
 				website="https://github.com/YetAgainAnotherZeus/cardinal"
 				date="2024"
+				skills={["DiscordJS", "TypeScript", "NodeJS", "Docker", "SurrealDB", "Github"]}
 			/>
 		</section>
-		<section>
+		<section class="flex flex-col">
 			<h2 class="title">Experience</h2>
+			<Experience
+				title="Kelkun - Back-End Developer"
+				startDate={new Date("2024-08")}
+				endDate={null}
+				location="Vendargues, France"
+				website="https://www.kelkun.com/"
+				skills={["TypeScript", "NodeJS", "GraphQL", "NestJS", "Docker", "Github", "PostgreSQL"]}
+			/>
 			<a
 				href="mailto:p.couturier3400@gmail.com"
-				class="flex items-center gap-1 hover:text-neutral-300"
-				>No experience. Click here to expand the list. <PhArrowSquareOutLight /></a
+				class="flex w-fit items-center gap-1 hover:text-neutral-300"
+				>Click here to contact me. <PhArrowSquareOutLight /></a
 			>
 		</section>
 	</div>
