@@ -37,29 +37,33 @@
 			outline-color: rgba(255, 0, 0, 0.7);
 			box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
 		}
-		16% {
+		14.28% {
 			outline-color: rgba(255, 165, 0, 0.7);
 			box-shadow: 0 0 20px rgba(255, 165, 0, 0.7);
 		}
-		33% {
+		28.57% {
 			outline-color: rgba(255, 255, 0, 0.7);
 			box-shadow: 0 0 20px rgba(255, 255, 0, 0.7);
 		}
-		50% {
+		42.85% {
 			outline-color: rgba(0, 255, 0, 0.7);
 			box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
 		}
-		66% {
+		57.14% {
 			outline-color: rgba(0, 0, 255, 0.7);
 			box-shadow: 0 0 20px rgba(0, 0, 255, 0.7);
 		}
-		83% {
+		71.42% {
 			outline-color: rgba(75, 0, 130, 0.7);
 			box-shadow: 0 0 20px rgba(75, 0, 130, 0.7);
 		}
-		100% {
+		85.71% {
 			outline-color: rgba(238, 130, 238, 0.7);
 			box-shadow: 0 0 20px rgba(238, 130, 238, 0.7);
+		}
+		100% {
+			outline-color: rgba(255, 0, 0, 0.7);
+			box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
 		}
 	}
 
