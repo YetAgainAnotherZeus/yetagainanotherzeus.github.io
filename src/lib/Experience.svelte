@@ -1,13 +1,24 @@
 <script lang="ts">
 	import { selectedSkillsStore } from './SelectedSkills';
 
-	export let title: string;
-	export let website: string;
-	export let startDate: Date;
-	export let endDate: Date | null = null;
-	export let location: string;
 
-	export let skills: string[] = [];
+	interface Props {
+		title: string;
+		website: string;
+		startDate: Date;
+		endDate?: Date | null;
+		location: string;
+		skills?: string[];
+	}
+
+	let {
+		title,
+		website,
+		startDate,
+		endDate = null,
+		location,
+		skills = []
+	}: Props = $props();
 
 	const months = [
 		'January',
@@ -26,8 +37,8 @@
 </script>
 
 <a
-	on:mouseenter={() => selectedSkillsStore.set(skills)}
-	on:mouseleave={() => selectedSkillsStore.set([])}
+	onmouseenter={() => selectedSkillsStore.set(skills)}
+	onmouseleave={() => selectedSkillsStore.set([])}
 	href={website}
 	class="block w-fit items-center mb-1 hover:bg-neutral-800 py-1 px-2 rounded group"
 	target="_blank"

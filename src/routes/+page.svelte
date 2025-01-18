@@ -2,7 +2,7 @@
 	import Skill from '$lib/Skill.svelte';
 	import Project from '$lib/Project.svelte';
 	import Experience from '$lib/Experience.svelte';
-	
+
 	import { selectedSkillsStore } from '$lib/SelectedSkills';
 
 	import PhArrowSquareOutLight from 'virtual:icons/ph/arrow-square-out-light';
@@ -21,8 +21,8 @@
 	import ISvelte from 'virtual:icons/skills/svelte';
 	import IRust from 'virtual:icons/skills/rust-dark';
 	import IPythonDark from 'virtual:icons/skills/python-dark';
-    import ISurrealdb from 'virtual:icons/skills/surrealdb-dark';
-    import ITauri from 'virtual:icons/skills/tauri-dark';
+	import ISurrealdb from 'virtual:icons/skills/surrealdb-dark';
+	import ITauri from 'virtual:icons/skills/tauri-dark';
 	import INest from 'virtual:icons/skills/nestjs';
 	import IGraphQL from 'virtual:icons/skills/graphql';
 	import IDiscordJS from 'virtual:icons/skills/discordjs';
@@ -59,7 +59,10 @@
 					<Skill title="ExpressJS" website="https://expressjs.com/">
 						<IExpressjsDark class="size-8" />
 					</Skill>
-					<Skill title="JavaScript" website="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+					<Skill
+						title="JavaScript"
+						website="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+					>
 						<IJavascript class="size-8" />
 					</Skill>
 					<Skill title="TypeScript" website="https://www.typescriptlang.org/">
@@ -116,29 +119,29 @@
 				title="Portfolio"
 				website="https://github.com/YetAgainAnotherZeus/yetagainanotherzeus.github.io"
 				date="2024"
-				skills={["Svelte", "TailwindCSS", "TypeScript", "NodeJS", "Github"]}
+				skills={['Svelte', 'TailwindCSS', 'TypeScript', 'NodeJS', 'Github']}
 			/>
-            <Project
+			<Project
 				title="Cardinal (A typescript discord bot)"
 				website="https://github.com/YetAgainAnotherZeus/cardinal"
 				date="2024"
-				skills={["DiscordJS", "TypeScript", "NodeJS", "Docker", "SurrealDB", "Github"]}
+				skills={['DiscordJS', 'TypeScript', 'NodeJS', 'Docker', 'SurrealDB', 'Github']}
 			/>
 		</section>
 		<section class="flex flex-col">
 			<h2 class="title">Experience</h2>
 			<Experience
 				title="Kelkun - Back-End Developer"
-				startDate={new Date("2024-08")}
+				startDate={new Date('2024-08')}
 				endDate={null}
-				location="Vendargues, France"
+				location="Saint-Aunès, France"
 				website="https://www.kelkun.com/"
-				skills={["TypeScript", "NodeJS", "GraphQL", "NestJS", "Docker", "Github", "PostgreSQL"]}
+				skills={['TypeScript', 'NodeJS', 'GraphQL', 'NestJS', 'Docker', 'Github', 'PostgreSQL']}
 			/>
 			<a
-				href="mailto:p.couturier3400@gmail.com"
+				href="https://www.linkedin.com/in/pierre-couturier-dev/"
 				class="flex w-fit items-center gap-1 hover:text-neutral-300"
-				>Click here to contact me. <PhArrowSquareOutLight /></a
+				target="_blank">Contact me via linkedIn. <PhArrowSquareOutLight /></a
 			>
 		</section>
 	</div>

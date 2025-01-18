@@ -1,16 +1,25 @@
 <script lang="ts">
 	import { selectedSkillsStore } from './SelectedSkills';
 
-	export let title: string;
-	export let website: string;
-	export let date: string;
 
-	export let skills: string[] = [];
+	interface Props {
+		title: string;
+		website: string;
+		date: string;
+		skills?: string[];
+	}
+
+	let {
+		title,
+		website,
+		date,
+		skills = []
+	}: Props = $props();
 </script>
 
 <a
-	on:mouseenter={() => selectedSkillsStore.set(skills)}
-	on:mouseleave={() => selectedSkillsStore.set([])}
+	onmouseenter={() => selectedSkillsStore.set(skills)}
+	onmouseleave={() => selectedSkillsStore.set([])}
 	href={website}
 	target="_blank"
 	rel="noopener noreferrer"

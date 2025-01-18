@@ -1,17 +1,22 @@
 <script lang="ts">
 	import { selectedSkillsStore } from '$lib/SelectedSkills';
-	import { get } from 'svelte/store';
+	import type { Snippet } from 'svelte';
 
-	export let title: string;
-	export let website: string;
+	interface Props {
+		title: string;
+		website: string;
+		children?: Snippet;
+	}
 
-	let selectedSkills: string[] = [];
+	let { title, website, children }: Props = $props();
 
-	$: {
+	let selectedSkills: string[] = $state([]);
+
+	$effect(() => {
 		selectedSkillsStore.subscribe((value) => {
 			selectedSkills = value;
-		})
-	}
+		});
+	});
 </script>
 
 <!-- class={selectedSkills.includes(title)
@@ -27,7 +32,7 @@
 		? 'rounded-lg rainbow-outline transition-all duration-500'
 		: ''}
 >
-	<slot />
+	{@render children?.()}
 </a>
 
 <style>
@@ -67,6 +72,8 @@
 	.rainbow-outline {
 		outline: 2px solid red; /* Start with red outline */
 		animation: rainbowEffect 15s infinite; /* Animate both outline and drop shadow */
-		transition: outline-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+		transition:
+			outline-color 0.5s ease-in-out,
+			box-shadow 0.5s ease-in-out;
 	}
 </style>
